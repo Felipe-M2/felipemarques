@@ -296,3 +296,70 @@
 .menuRodape ul li:hover{
     opacity: .5;
 }
+
+/* -RESPONSSIVO- */
+
+@media only screen and (max-width: 600px) {
+    *{
+        text-align: center;
+    }
+
+    /* TOPO */
+    .pilarBackground{
+        width: 100% !important;
+    }
+
+    .navBar,
+    .infoSocial,
+    .menuRodape,
+    .menu-primarioRodape{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tituloTopo{
+        width: 200px;
+    }
+
+    .tituloTopo h1{
+        font-size: 2rem;
+        width: 300px;
+    }
+
+    .mouseAnimation{
+        display: none;
+    }
+
+    /* CONTEUDO */
+    .apresentacao1{
+        flex-direction: column;
+    }
+
+    .linhaCentral{
+        width: 250px;
+        height: 7px;
+    }
+
+    .apresentacao2{
+        display: none;
+    }
+
+    .tituloPortfolio,
+    .tituloContato{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .tituloPortfolio img,
+    .tituloContato img{
+        width: 100px;
+    }
+
+    .emailSocial{
+        font-size: 1rem;
+    }
+
+    .orcamentoForm input{
+        width: 80%;
+    }
+  }
