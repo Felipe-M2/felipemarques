@@ -261,7 +261,7 @@
     padding: 30px;
 }
 
-.orcamentoForm input{
+.sectionInput input{
     margin: 20px;
     width: 400px;
     height: 40px;
@@ -269,6 +269,27 @@
     border-radius: 20px;
     border: none;
     padding: 0 10px;
+}
+
+.btnOrcamentoForm{
+    width: 150px;
+    color: #323232;
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+}
+
+.faseForm{
+    display: none;
+}
+
+.fase{
+    opacity: .5;
+}
+
+.nameForm{
+    display: flex;
 }
 
 /* --RODAPE-- */
