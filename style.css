@@ -162,14 +162,16 @@
 }
 
 .infoApresentacao{
-    width: 700px;
-    position: absolute;
-    bottom:50%;
-    right: 50%;
-    transform: translate(50%, 50%);
+    background-color: #323232;
+    width: 100%;
+    padding: 100px 0 0 50px;
     flex-direction: column;
     gap: 40px;
     color: #fff;
+}
+
+.infoApresentacao img{
+    width: 200px;
 }
 
 .infoApresentacao h1{
