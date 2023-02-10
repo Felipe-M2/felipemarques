@@ -164,7 +164,7 @@
 .infoApresentacao{
     background-color: #323232;
     width: 100%;
-    padding: 100px 0 0 50px;
+    padding: 100px 30px 20px;
     flex-direction: column;
     gap: 40px;
     color: #fff;
@@ -227,11 +227,11 @@
 }
 
 .infoSocial,
-.infoSocial ul,
+.infoSocial ul li a,
 .telefone{
-    gap: 5px;
     font-size: 1.5rem;
     color: #323232;
+    padding: 5px;
 }
 
 .emailSocial p{
@@ -405,10 +405,6 @@
     .linhaCentral{
         width: 250px;
         height: 7px;
-    }
-
-    .apresentacao2{
-        display: none;
     }
 
     .tituloPortfolio,
