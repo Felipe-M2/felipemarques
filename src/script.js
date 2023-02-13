@@ -3,58 +3,103 @@ let labelForm = document.querySelector(".labelForm");
 
 let faseForm = 1;
 
-nomeCliente = "";
+let dadosClient = {
+    nomeCliente: "",
+    projetoClient: "",
+    contatoClient: "",
+    emailClient: "",
+    infoTextoClient: "",
+};
 
 let formFaseFunction = ()=>{
+
     switch(faseForm){
+
         case 1:
             let nomeForm = document.querySelector("#nomeOrcamento").value;
-            document.querySelector(".nameForm").style.display = "none";
-            document.querySelector(".projetoForm").style.display = "flex";
-            document.querySelector(".fase2").style.opacity = "1";
-            document.querySelector(".fase1").style.opacity = "0.5";
-            nomeCliente = nomeForm.value;
-            labelForm.innerHTML = `Olá ${nomeForm}, Selecione qual tipo de projeto você quer:`;
-            faseForm = faseForm + 1;
+            
+            if(nomeForm.length > 0){
+                document.querySelector(".nameForm").style.display = "none";
+                document.querySelector(".projetoForm").style.display = "flex";
+                document.querySelector(".fase2").style.opacity = "1";
+                document.querySelector(".fase1").style.opacity = "0.5";
+                dadosClient.nomeCliente = nomeForm;
+                labelForm.innerHTML = `Olá ${nomeForm}, Selecione qual tipo de projeto você quer:`;
+                faseForm = faseForm + 1;
+            }else{
+                labelForm.innerHTML = "Preencha seu nome";
+            }
 
             break;
 
         case 2:
-            document.querySelector(".projetoForm").style.display = "none";
-            document.querySelector(".contatoForm").style.display = "flex";
-            document.querySelector(".fase3").style.opacity = "1";
-            document.querySelector(".fase2").style.opacity = "0.5";
-            labelForm.innerHTML = "Otimo, digita o seu telefone:";
+            let selectProjeto = document.querySelector("#selectProjeto").value;
 
-            faseForm = faseForm + 1;
+            if(selectProjeto != ""){
+                document.querySelector(".projetoForm").style.display = "none";
+                document.querySelector(".contatoForm").style.display = "flex";
+                document.querySelector(".fase3").style.opacity = "1";
+                document.querySelector(".fase2").style.opacity = "0.5";
+                labelForm.innerHTML = "Otimo, digita o seu telefone:";
+                dadosClient.projetoClient = selectProjeto;
+
+                faseForm = faseForm + 1;
+            }else{
+                labelForm.innerHTML = "Selecione o projeto";
+            }
+
             break;
 
         case 3:
-            document.querySelector(".contatoForm").style.display = "none";
-            document.querySelector(".emailForm").style.display = "flex";
-            document.querySelector(".fase4").style.opacity = "1";
-            document.querySelector(".fase3").style.opacity = "0.5";
-            labelForm.innerHTML = "Qual o seu email?";
+            
+            let contatoForm = document.querySelector("#contatoForm").value;
 
-            faseForm = faseForm + 1;
+            if(contatoForm.length >= 10){
+                document.querySelector(".contatoForm").style.display = "none";
+                document.querySelector(".emailForm").style.display = "flex";
+                document.querySelector(".fase4").style.opacity = "1";
+                document.querySelector(".fase3").style.opacity = "0.5";
+                labelForm.innerHTML = "Qual o seu email?";
+                dadosClient.contatoClient = contatoForm;
+
+                faseForm = faseForm + 1;
+            }else{
+                labelForm.innerHTML = "Digite um telefone valido!"
+            }
+
             break;
 
         case 4:
-            document.querySelector(".emailForm").style.display = "none";
-            document.querySelector(".infoClient").style.display = "flex";
-            document.querySelector(".fase5").style.opacity = "1";
-            document.querySelector(".fase4").style.opacity = "0.5";
-            labelForm.innerHTML = "Me explica como você quer o seu projeto:";
+            
+            let emailForm = document.querySelector("#emailForm").value;
 
-            faseForm = faseForm + 1;
+            if(emailForm.length > 0){
+                document.querySelector(".emailForm").style.display = "none";
+                document.querySelector(".infoClient").style.display = "flex";
+                document.querySelector(".fase5").style.opacity = "1";
+                document.querySelector(".fase4").style.opacity = "0.5";
+                labelForm.innerHTML = "Me explica como você quer o seu projeto:";
+
+                dadosClient.emailClient = emailForm;
+
+                faseForm = faseForm + 1;
+            }else{
+                labelForm.innerHTML = "Digite um email valido!"
+            }
+
             break;
 
         case 5:
+            let infoClient = document.querySelector("#infoClient").value;
+            
             document.querySelector(".infoClient").style.display = "none";
             document.querySelector(".fase5").style.opacity = "0.5";
 
+            dadosClient.infoTextoClient = infoClient;
+
             labelForm.innerHTML = "Pronto só aguardar nosso contato!";
             break;
+
     }
 }
 
