@@ -33,6 +33,19 @@
     position: relative;
 }
 
+.atencao{
+    width: 100%;
+    background-color: #F4EB0B;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.atencao > i{
+    padding: 0 10px;
+}
+
 .pilarBackground{
     position: absolute;
     right: 0;
